@@ -2,6 +2,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 
 import MediaCard from '../../components/Cards/MediaCard';
+import Layout from '../../components/Layout/Layout';
 
 const mediaCards = [
   {
@@ -28,14 +29,16 @@ const mediaCards = [
 
 export default function TestCards() {
   return (
-    <Box p={5} pt={15} minHeight='100vh'>
-      <Grid container spacing={2}>
-        {mediaCards.map((card, index) => (
-          <Grid item key={index}>
-            <MediaCard {...card} />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <Layout>
+      <Box p={5} pt={15} minHeight='100vh'>
+        <Grid container spacing={2}>
+          {mediaCards.map((card, index) => (
+            <Grid item key={index}>
+              <MediaCard {...card} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Layout>
   );
 }
